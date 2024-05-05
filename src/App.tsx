@@ -1,12 +1,22 @@
 
 import LandingPage from './components/landingPage/landingPage'
 import './App.css'
-import { useState } from "react";
+import { useState, FC, Dispatch, SetStateAction } from "react";
+import EditMode from './components/landingPage/EditMode';
 
-function App(){
+
+interface EditProps {
+  isOpen: boolean,
+  setIsOpen: Dispatch<SetStateAction<boolean>>,
+}
+
+const App: FC<EditProps> = (props) =>  {
   const [isOpen, setIsOpen] = useState(false);
   return (
-  <LandingPage isOpen={isOpen} setIsOpen={setIsOpen}/>
+    <>
+    <LandingPage isOpen={props.isOpen} setIsOpen={props.setIsOpen}/>
+    <EditMode isOpen={isOpen} setIsOpen={setIsOpen}/>
+    </>
   )
 }
 

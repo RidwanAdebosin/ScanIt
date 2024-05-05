@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBox, faBolt, faWandMagicSparkles, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
-const EditMode () => {
+function EditMode({isOpen, setIsOpen}) {
 
     const CloseEditMode = () => {
         setIsOpen(!isOpen)
     }
-    
+
     return (
         <nav className="edit-features">
         <li>
