@@ -1,0 +1,64 @@
+:root {
+    /* colors */
+    --white: #ffffff;
+    --grey: #444443;
+    --gray: #737373;
+    --background: #383839;
+    --btnbackground: #4B4B4C;
+   
+   
+  
+    /* fonts */
+    --decorative: "Montserrat", sans-serif;
+    --sans: "Open Sans", sans-serif;
+  
+    /* font size */
+    --base-size: 1.2rem;
+    --scale: 1.25;
+    --xl: calc(var(--lg) * var(--scale) * var(--scale));
+    --lg: calc(var(--h1) * var(--scale));
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--base-size);
+    --small: calc(var(--base-size) / var(--scale));
+  
+    --radius: 20px;
+  }
+
+  .main-container {
+    /* display: flex; */
+    margin: 10% auto;
+    max-width: 70%;
+    height: 70vh;
+    border: 3px solid var(--gray);
+    border-radius: var(--radius);
+    background-position: 50%;
+    /* background: linear-gradient(#383839, #383839), url(../../assets/backgroundImage.avif); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  header {
+    display: flex;
+  }
+
+.btn {
+    background: var(--btnbackground);
+    border: none;
+    color: var(--white);
+   display: grid;
+   padding: var(--h6);
+   box-shadow: rgba(201, 201, 240, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+   border-radius: var(--radius);
+   cursor: pointer;
+  }
+
+  li {
+    list-style-type: none;
+    display: grid;
+   
+  }
