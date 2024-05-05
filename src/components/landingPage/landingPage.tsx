@@ -1,38 +1,28 @@
 import "./landingpage.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faBox, faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+
+import EditMode from "./EditMode";
 
 
 
-const LandingPage = () => {
+function LandingPage({isOpen, setIsOpen}) {
+
+    const EditIsOpen = () => {
+        setIsOpen(isOpen);
+    }
+
     return (
         <>
         <main className="main-container">
-            <header>
+            <header  onClick={EditIsOpen} aria-label="Toggle Menu">
                 <button className="btn">
                     <span><FontAwesomeIcon icon={faPen}/></span>
                     Edit
                 </button>
+                <EditMode/>
             </header>
-            <nav className="edit-features">
-                <li>
-                    <span>HD</span>
-                    Quality
-                </li>
-                <li>
-                    <span><FontAwesomeIcon icon={faBox}/></span>
-                    Grid
-                </li>
-                <li>
-                <span><FontAwesomeIcon icon={faBolt}/></span>
-                    Flash
-                </li>
-                <li>
-                <span><FontAwesomeIcon icon={faBox}/></span>
-                    Filter
-                </li>
-                <li></li>
-            </nav>
+
            
         </main>
         </>
