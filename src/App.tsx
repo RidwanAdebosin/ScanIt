@@ -15,12 +15,14 @@ const LandingPage: FC<EditProps> = ({ isOpen, setIsOpen }): JSX.Element => {
 
   return (
     <main className="main-container">
+      {!isOpen && (
       <header onClick={toggleEditMode} aria-label="Toggle Menu">
         <button className="btn">
           <span><FontAwesomeIcon icon={faPen}/></span>
           Edit
         </button>
       </header> 
+      )}
       {isOpen && <EditMode setIsOpen={setIsOpen} />}
     </main>
   );
