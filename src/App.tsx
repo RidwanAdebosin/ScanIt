@@ -1,83 +1,70 @@
-
-import "..//src/components/landingPage/landingpage.css"
-// import './App.css'
-import { useState, FC, Dispatch, SetStateAction } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faBox, faBolt, faWandMagicSparkles, faXmark } from '@fortawesome/free-solid-svg-icons';
-
-// import {EditProps} from "myTypes";
-
+import "..//src/components/landingPage/landingpage.css";
+import { useState, FC } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen, faBox, faBolt, faWandMagicSparkles, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 interface EditProps {
   isOpen: boolean,
-  setIsOpen: Dispatch<SetStateAction<boolean>>,
-}  
+  setIsOpen: (isOpen: boolean) => void,
+}
 
+const LandingPage: FC<EditProps> = ({ isOpen, setIsOpen }): JSX.Element => {
+  const toggleEditMode = () => {
+    setIsOpen(!isOpen);
+  };
 
-
-
-function LandingPage: EditProps<FC>() {
-  const [isOpen, setIsOpen] = useState(false);
-
-
-    const EditIsOpen = () => {
-        setIsOpen(isOpen);
-    }
-
-    return (
-        <>
-        <main className="main-container">
-            <header  onClick={EditIsOpen} aria-label="Toggle Menu">
-                <button className="btn">
-                    <span><FontAwesomeIcon icon={faPen}/></span>
-                    Edit
-                </button>
-                <EditMode isOpen={isOpen} setIsOpen={setIsOpen}/>
-            </header> 
-        </main>
-        </>
-    )
+  return (
+    <main className="main-container">
+      <header onClick={toggleEditMode} aria-label="Toggle Menu">
+        <button className="btn">
+          <span><FontAwesomeIcon icon={faPen}/></span>
+          Edit
+        </button>
+      </header> 
+      {isOpen && <EditMode setIsOpen={setIsOpen} />}
+    </main>
+  );
 };
 
-function EditMode({isOpen, setIsOpen}) {
+const EditMode: FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }): JSX.Element => {
+  const closeEditMode = () => {
+    setIsOpen(false);
+  };
 
-    const CloseEditMode = () => {
-        setIsOpen(!isOpen)
-    }
-
-    return (
-        <nav className="edit-features">
-        <li>
-            <span>HD</span>
-            Quality
+  return (
+    <nav className="edit-features">
+      <ul>
+        <li key="HD">
+          <span>HD</span>
+          Quality
         </li>
-        <li>
-            <span><FontAwesomeIcon icon={faBox}/></span>
-            Grid
+        <li key="Grid">
+          <span><FontAwesomeIcon icon={faBox}/></span>
+          Grid
         </li>
-        <li>
-        <span><FontAwesomeIcon icon={faBolt}/></span>
-            Flash
+        <li key="Flash">
+          <span><FontAwesomeIcon icon={faBolt}/></span>
+          Flash
         </li>
-        <li>
-        <span><FontAwesomeIcon icon={faWandMagicSparkles}/></span>
-            Filter
+        <li key="Filter">
+          <span><FontAwesomeIcon icon={faWandMagicSparkles}/></span>
+          Filter
         </li>
-        <li onClick={CloseEditMode}>
-        <span><FontAwesomeIcon icon={faXmark}/></span>
-            Close
+        <li onClick={closeEditMode} key="Close">
+          <span><FontAwesomeIcon icon={faTimes}/></span>
+          Close
         </li>
+      </ul>
     </nav>
-    )
-}
-
+  );
+};
 
 const App = () =>  {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <>
-    <LandingPage/>
-    </>
-  )
-}
+    <LandingPage isOpen={isOpen} setIsOpen={setIsOpen} />
+  );
+};
 
 export default App;

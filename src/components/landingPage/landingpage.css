@@ -51,22 +51,25 @@
     margin: 0 auto;
     color: var(--white);
    display: grid;
-   padding: var(--small);
+   padding: 0.4rem 0.5rem ;
    box-shadow: rgba(245, 242, 242, 0.15) 0px 2px 8px;
    border-radius: var(--radius);
    cursor: pointer;
   }
 
   .edit-features {
-    display: flex;
     margin: 0 auto;
-    padding: var(--small);
     background: var(--btnbackground);
     width: fit-content;
-    gap: 1rem;
     border-radius: var(--radius);
     box-shadow: rgba(245, 242, 242, 0.15) 0px 2px 8px;
 }   
+
+.edit-features ul {
+  display: flex;
+  padding: 0.3rem 0.5rem;
+  gap: 1rem;
+}
 
 li {
     list-style-type: none;
