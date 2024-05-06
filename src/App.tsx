@@ -1,6 +1,6 @@
 
 import LandingPage from './components/landingPage/landingPage'
-import './App.css'
+// import './App.css'
 import { useState, FC, Dispatch, SetStateAction } from "react";
 import EditMode from './components/landingPage/EditMode';
 

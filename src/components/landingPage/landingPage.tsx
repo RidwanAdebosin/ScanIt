@@ -19,7 +19,7 @@ function LandingPage({isOpen, setIsOpen}) {
                     <span><FontAwesomeIcon icon={faPen}/></span>
                     Edit
                 </button>
-                <EditMode/>
+                <EditMode isOpen={isOpen} setIsOpen={setIsOpen}/>
             </header>
 
            
