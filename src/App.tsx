@@ -72,9 +72,9 @@ const ScanArea =() => {
 
 }
 
-const actionMode = () => {
-  
-}
+// const actionMode = () => {
+
+// }
 
 const App = () =>  {
   const [isOpen, setIsOpen] = useState(false);

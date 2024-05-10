@@ -50,11 +50,12 @@
     border: none;
     margin: 0 auto;
     color: var(--white);
-   display: grid;
-   padding: 0.4rem 0.5rem ;
-   box-shadow: rgba(245, 242, 242, 0.15) 0px 2px 8px;
-   border-radius: var(--radius);
-   cursor: pointer;
+    display: grid;
+    padding: 0.4rem 0.5rem ;
+    box-shadow: rgba(245, 242, 242, 0.15) 0px 2px 8px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-block-end: 2rem;
   }
 
   .edit-features {
@@ -63,6 +64,7 @@
     width: fit-content;
     border-radius: var(--radius);
     box-shadow: rgba(245, 242, 242, 0.15) 0px 2px 8px;
+    margin-block-end: 1.5rem;
 }   
 
 .edit-features ul {
@@ -87,6 +89,8 @@ li:hover {
 /* styling the scan area */
 .scaning-area {
   height: 50vh;
-  width: 50%;
-  border: 5px dashed yellow;
+  width: 70%;
+  border: 0.3rem dashed goldenrod;
+  border-radius: 0.5em;
+  margin: 0 auto;
 }
