@@ -9,13 +9,13 @@ interface EditProps {
   setIsOpen: (isOpen: boolean) => void,
 }
 
-const LandingPage: FC<EditProps> = ({ isOpen, setIsOpen }): JSX.Element => {
+const EditDocument: FC<EditProps> = ({ isOpen, setIsOpen }): JSX.Element => {
   const toggleEditMode = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <main className="main-container">
+    <main >
       {!isOpen && (
       <header onClick={toggleEditMode} aria-label="Toggle Menu">
         <button className="btn">  
@@ -72,18 +72,24 @@ const ScanArea =() => {
 
 }
 
+const actionMode = () => {
+  
+}
+
 const App = () =>  {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-    <LandingPage isOpen={isOpen} setIsOpen={setIsOpen} />
+    <main className="main-container">
+    <EditDocument isOpen={isOpen} setIsOpen={setIsOpen} />
     <ScanArea/>
+    </main>
     </>
+    
   );
 };
 
 export default App;
 
- // Use the find() method to find the first object in an array that meets a certain condition.
 
