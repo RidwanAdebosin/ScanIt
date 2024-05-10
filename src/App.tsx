@@ -2,6 +2,7 @@ import "..//src/components/landingPage/landingpage.css";
 import { useState, FC } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faBox, faBolt, faWandMagicSparkles, faTimes } from '@fortawesome/free-solid-svg-icons';
+// import { JSXSource } from "react/jsx-dev-runtime";
 
 interface EditProps {
   isOpen: boolean,
@@ -17,7 +18,7 @@ const LandingPage: FC<EditProps> = ({ isOpen, setIsOpen }): JSX.Element => {
     <main className="main-container">
       {!isOpen && (
       <header onClick={toggleEditMode} aria-label="Toggle Menu">
-        <button className="btn">
+        <button className="btn">  
           <span><FontAwesomeIcon icon={faPen}/></span>
           Edit
         </button>
@@ -61,12 +62,28 @@ const EditMode: FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }): 
   );
 };
 
+
+const ScanArea =() => {
+  return (
+    <div className="scaning-area">
+      
+    </div>
+  )
+
+}
+
 const App = () =>  {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
     <LandingPage isOpen={isOpen} setIsOpen={setIsOpen} />
+    <ScanArea/>
+    </>
   );
 };
 
 export default App;
+
+ // Use the find() method to find the first object in an array that meets a certain condition.
+

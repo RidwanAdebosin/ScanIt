@@ -82,3 +82,11 @@ li {
 li:hover {
     color: var(--gray);
 }
+
+
+/* styling the scan area */
+.scaning-area {
+  height: 50vh;
+  width: 50%;
+  border: 5px dashed yellow;
+}
